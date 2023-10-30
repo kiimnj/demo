@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.apiController;
 
 import com.example.demo.model.Post;
 import com.example.demo.model.PostDto;
