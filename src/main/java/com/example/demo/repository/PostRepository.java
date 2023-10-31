@@ -1,9 +1,11 @@
 package com.example.demo.repository;
 
 import com.example.demo.model.Post;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+@Mapper //resources/mapper
 public interface PostRepository {
     List<Post> selectAllPosts();
     Post selectPostById(int postId);

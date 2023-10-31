@@ -8,7 +8,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Repository //Service가 갖다쓸 수 있도록, Autowired로 연결
+//@Repository //Service가 갖다쓸 수 있도록, Autowired로 연결
+//대신 PostRepository.xml사용
 public class PostRepositoryImpl implements PostRepository {
     private static Map<Integer, Post> posts = new HashMap<>();
     private static int seq = 0;

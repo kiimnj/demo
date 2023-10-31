@@ -23,7 +23,7 @@ class ProductServiceTest {
                 .build();
         String s = productService.addProduct(product);
         assertThat(s).isEqualTo("제품 추가 성공");
-        assertThat(productService.getAllProduct().size()).isEqualTo(2);
+        assertThat(productService.getAllProducts().size()).isEqualTo(2);
     }
 
 //    @Test
