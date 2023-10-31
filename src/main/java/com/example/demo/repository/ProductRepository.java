@@ -11,5 +11,5 @@ public interface ProductRepository {
     Product findById(int productId);
     Product insert(Product product);
     Product update(int productId, Product product);
-    Product delete(int productId, Product product);
+    Product delete(int productId);
 }

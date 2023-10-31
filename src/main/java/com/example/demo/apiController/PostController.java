@@ -12,9 +12,9 @@ public class PostController {
 //    @Autowired //final 빼기
     private PostService postService;
 //    @Autowired, 세터 주입은 잘 하지 않음
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
+//    public PostController(PostService postService) {
+//        this.postService = postService;
+//    }
 
     @GetMapping("/posts")
     public List<Post> viewAllPosts() {
@@ -35,5 +35,14 @@ public class PostController {
         postService.updatePost(postId, postDto);
         System.out.println("after : " + postDto);
         return "업데이트 완료";
+    }
+    @GetMapping("/posts/{postId}")
+    public Post viewPostById(@PathVariable("postId") int postId){
+        return postService.getPostById(postId);
+    }
+
+    @DeleteMapping("/posts/{postId}")
+    public void removePost(@PathVariable int postId){
+        postService.removePost(postId);
     }
 }

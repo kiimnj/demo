@@ -7,5 +7,5 @@ public class Student {
     private int studentId;
     private String name;
     private String major;
-    private Integer point; //null처리 할 수 있도록
+    private float point; //null처리 할 수 있도록
 }

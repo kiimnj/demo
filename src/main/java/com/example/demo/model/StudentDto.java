@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class StudentDto {
     private int studentId;
-    private Integer point;
+    private float point;
 }

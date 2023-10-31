@@ -8,6 +8,6 @@ public interface StudentRepository {
     List<Student> findAll();
     Student findById(int studentId);
     Student removeById(int studentId);
-    Integer add(Student student);
+    Student add(Student student);
     Student update(int studentId, Student student);
 }

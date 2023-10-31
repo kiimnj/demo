@@ -21,8 +21,15 @@ public class PostService {
     }
     public Post updatePost(int postId, PostDto postDto) {
         Post orgPost = postRepository.selectPostById(postId);
-        orgPost.setLikes(postDto.getLikes()); //key가 바뀌면 insert가 됨
+        orgPost.setLikes(postDto.getLikes()); //key가 바뀌면 update가 아니라 insert가 됨
         postRepository.updatePost(orgPost);
         return orgPost;
+    }
+    public Post getPostById(int postId){
+        return postRepository.selectPostById(postId);
+    }
+
+    public void removePost(int postId){
+        postRepository.deletePost(postId);
     }
 }

@@ -23,7 +23,15 @@ public class MemoryProductRepository implements ProductRepository { //ctrl+shift
                 .price(15000)
                 .qty(100)
                 .build();
-        productMap.put(seq, product);
+//        productMap.put(seq, product);
+        insert(product);
+        product = Product.builder()
+                .productName("제품명2")
+                .maker("오리")
+                .price(10000)
+                .qty(1000)
+                .build();
+        insert(product);
     }
 
     @Override
@@ -52,8 +60,8 @@ public class MemoryProductRepository implements ProductRepository { //ctrl+shift
         return updateProduct;
     }
     @Override
-    public Product delete(int productId, Product product) {
-        Product deleteProduct = productMap.remove(product.getProductId());
-        return deleteProduct;
+    public Product delete(int productId) {
+        Product removedProduct = productMap.remove(productId);
+        return removedProduct;
     }
 }

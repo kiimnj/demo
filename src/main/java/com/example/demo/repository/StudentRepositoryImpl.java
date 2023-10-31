@@ -17,7 +17,7 @@ public class StudentRepositoryImpl implements StudentRepository {
         Student student = new Student();
         student.setName("홍길동");
         student.setMajor("컴공");
-        student.setPoint(3);
+        student.setPoint(3.0f);
         add(student);
     }
 
@@ -39,24 +39,20 @@ public class StudentRepositoryImpl implements StudentRepository {
     }
 
     @Override
-    public Integer add(Student student) { //put기능 외에는 서비스로 뺴는 게 더 좋음
-        Integer result = null;
+    public Student add(Student student) { //put기능 외에는 서비스로 뺴는 게 더 좋음
         student.setStudentId(++seq);
         Student addedStudent = studentMap.put(seq, student);
-        if (addedStudent != null) {
-            result = student.getStudentId();
-        } else {
-        }
-        return result;
+        return addedStudent;
     }
 
     @Override
     public Student update(int studentId, Student student) {
+        Student updatedStudent = null;
         if (findById(studentId) != null) {
-            studentMap.put(studentId, student);
+            updatedStudent = studentMap.put(seq, student);
         } else {
-            System.out.println("업데이트 실패");
+            updatedStudent = add(student);
         }
-        return student;
+        return updatedStudent;
     }
 }

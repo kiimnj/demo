@@ -21,7 +21,7 @@ public class ViewController {
     }
     @GetMapping("/products")
     public String method0(Model model) {
-        List<Product> allProducts = productService.getAllProduct();
+        List<Product> allProducts = productService.getAllProducts();
         model.addAttribute("products", allProducts);
         return "productList";
     }
@@ -62,8 +62,8 @@ public class ViewController {
     }
     @GetMapping("/link")
     public String method3(Model model) {
-        model.addAttribute("param1", "param1의 값");
-        model.addAttribute("param2", "param2의 값");
+        model.addAttribute("param1", 3);
+        model.addAttribute("param2", 5);
         return "link";
     }
     @GetMapping("/student")

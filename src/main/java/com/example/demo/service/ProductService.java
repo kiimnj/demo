@@ -10,14 +10,14 @@ import java.util.List;
 
 @Service
 public class ProductService {
-    ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     @Autowired
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
-    public List<Product> getAllProduct() {
+    public List<Product> getAllProducts() {
         List<Product> allProducts = productRepository.findAll();
         return allProducts;
     }
@@ -47,9 +47,9 @@ public class ProductService {
         }
         return msg;
     }
-    public String deleteProduct(int productId, Product product) {
+    public String deleteProduct(int productId) {
         String msg = "";
-        Product deleted = productRepository.delete(productId, product);
+        Product deleted = productRepository.delete(productId);
         if (deleted != null) {
             msg = "제품 삭제 성공";
         } else {

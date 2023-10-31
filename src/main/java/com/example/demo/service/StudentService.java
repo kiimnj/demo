@@ -33,8 +33,9 @@ public class StudentService {
     }
     public String addStudent(Student student) {
         String result = "";
-        Integer add = studentRepository.add(student);
-        if (add != null) {
+        Student addedStudent = studentRepository.add(student);
+        System.out.println(addedStudent);
+        if (addedStudent != null) {
             result = "정상 추가 됨";
         } else {
             result = "정상 추가 안됨";

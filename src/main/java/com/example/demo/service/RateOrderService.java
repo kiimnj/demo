@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 import org.springframework.stereotype.Service;
 
-@Service //서비스는 하나만 가능
+//@Service //서비스는 하나만 가능
 public class RateOrderService implements OrderService {
     private final int DISCOUNT_RATE = 10;
 

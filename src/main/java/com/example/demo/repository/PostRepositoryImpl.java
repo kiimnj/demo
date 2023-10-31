@@ -14,6 +14,14 @@ public class PostRepositoryImpl implements PostRepository {
     private static int seq = 0;
 
     public PostRepositoryImpl() {
+        //객체 생성 시마다 테스트데이터 삽입
+        seq++;
+        Post post = new Post();
+        post.setPostid(seq);
+        post.setTitle("testTitle");
+        post.setBody("testBody");
+        post.setLikes(0);
+        posts.put(seq, post);
     }
 
     @Override
@@ -23,12 +31,12 @@ public class PostRepositoryImpl implements PostRepository {
 
     @Override
     public Post selectPostById(int postId) {
-        return null;
+        return posts.get(postId);
     }
 
     @Override
     public void deletePost(int postId) {
-
+        posts.remove(postId);
     }
 
     @Override
